@@ -1,6 +1,6 @@
 # spring-jpa-example
-Java Standard ORM. JPA(Java Persistence API)
-
+- Java Standard ORM. JPA(Java Persistence API)
+- PPT(Korean) http://www.slideshare.net/nimbae/jpa-n1
 
 Spring boot 2.0.3
 
@@ -11,6 +11,9 @@ dependency
 - JPA
 - MySQL
 - JDBC
+
+- domain
+![domain](./image/domain.PNG)
 
 
 ```
@@ -69,3 +72,18 @@ N+1 해결방안
 만약 바꾸고 싶으면
 @EnableJpaRepositories(basePackages = "com.chozza.repository", repositoryImplementationPostfix = "Impl")
 ```
+
+---
+
+- hibernate.hbm2ddl.auto
+1. create
+2. create-drop
+3. update
+4. none
+
+- hibernate.dialect
+1. org.hibernate.dialect.MySQL5InnoDBDialect
+
+- org.hibernate.loader.MultipleBagFetchException <br>
+FetchType.EAGER 가진 두 개의 콜렉션을 좋아하지 않는다.
+위와 같은 예외가 발생하면, FetchType 을 Lazy로 수정하자. (언제부터인가 검증을 하는거같은..)
